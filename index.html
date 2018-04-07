@@ -6,35 +6,22 @@
   <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
 </head>
 <body class="container">
-  <h1>Tax Cracker</h1>
-  <div class="table-responsive">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Options</th>
-          <th>Votes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Renewables</td>
-          <td id="option-1"></td>
-        </tr>
-        <tr>
-          <td>Pension</td>
-          <td id="option-2"></td>
-        </tr>
-        <tr>
-          <td>Education</td>
-          <td id="option-3"></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <input type="text" id="option" />
-  <a href="#" onclick="voteForOption()" class="btn btn-primary">Vote</a>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Tax Cracker</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="vote.html">Browse</a></li>
+        <li><a href="login.html">Logout</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </div>
+  </nav>
 </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-<script src="./index.js"></script>
+<script src="./voting.js"></script>
 </html>
