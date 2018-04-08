@@ -45,7 +45,10 @@
     <title>Tax Cracker</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="css/main.css">.
+
     <script src="js/main.js" charset="utf-8"></script>
   </head>
   <body class="container">
@@ -54,7 +57,7 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Tax Cracker</a>
         </div>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" id="nav-list">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="login.html">Login</a></li>
           <li><a href="vote.html">Browse</a></li>
@@ -64,74 +67,83 @@
       </div>
     </nav>
 
+  <div class="vote-display">
+    <h1>TaxCrackers Voting</h1>
+    <div class="timer-div">
+      <p id="timer">Voting closes: April 10, 2018, 12:00 PM</p>
+    </div>
+    <div class="quorum-div">
+      <p>QUORUM: </p>
+      <p id="quorum"></p>
+    </div>
+
 
     <form class="voter-form" action="index.html" method="post">
+      <p>Select an option to vote on where you want to see your taxes go: </p>
+
   <div>
     <label for="issues">Renewables: </label>
-    <input name="issues" id="option" type="radio" id="say" value="Renewables">
+    <input name="issues" id="option-1" type="radio" id="say" value="Renewables">
   </div>
   <div>
     <label for="issues">Pension: </label>
-    <input name="issues" id="option" type="radio" value="Pension">
+    <input name="issues" id="option-2" type="radio" value="Pension">
   </div>
   <div>
     <label for="issues">Education: </label>
-    <input name="issues" id="option" type="radio" value="Education">
+    <input name="issues" id="option-3" type="radio" value="Education">
   </div>
 
-  <button type="button" id="login-vote" class onclick="voteForOption()">VOTE</button>
+  <button type="button" id="submit-vote" class onclick="voteForOption()">VOTE</button>
 </form>
 </div>
 
-    </div>
+  <div class="results-display">
+    <h1>Results</h1>
+      <div class="results-output-value">
+        <p class="">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Options</th>
+                <th>Votes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Renewables</td>
+                <td id="option-1"></td>
+              </tr>
+              <tr>
+                <td>Pension</td>
+                <td id="option-2"></td>
+              </tr>
+              <tr>
+                <td>Education</td>
+                <td id="option-3"></td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+        <div class="results-output-image">
 
-
-    <div class="results-display">
-      <h1>Results</h1>
-        <div class="results-output-value">
-          <p class="">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Options</th>
-                  <th>Votes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Renewables</td>
-                  <td id="option-1"></td>
-                </tr>
-                <tr>
-                  <td>Pension</td>
-                  <td id="option-2"></td>
-                </tr>
-                <tr>
-                  <td>Education</td>
-                  <td id="option-3"></td>
-                </tr>
-              </tbody>
-            </table>
-          </p>
-          <div class="results-output-image">
-
-          </div>
         </div>
+      </div>
 
-        <div class="results-output">
-          <p class=""></p>
-          <div class="results-output-image">
+      <div class="results-output">
+        <p class=""></p>
+        <div class="results-output-image">
 
-          </div>
         </div>
+      </div>
 
-        <div class="results-output">
-          <p class=""></p>
-          <div class="results-output-image">
+      <div class="results-output">
+        <p class=""></p>
+        <div class="results-output-image">
 
-          </div>
         </div>
-    </div>
+      </div>
+  </div>
 
 
 

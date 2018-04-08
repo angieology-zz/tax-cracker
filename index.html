@@ -3,47 +3,111 @@
   <head>
     <title>Tax Cracker</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/main.css">.
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">    <link rel="stylesheet" type="text/css" href="css/main.css">.
     <script src="js/main.js" charset="utf-8"></script>
   </head>
   <body class="container">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Tax Cracker</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="vote.html">Browse</a></li>
-          <li><a href="login.html">Logout</a></li>
-          <li><a href="help.html">Help</a></li>
-        </ul>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Tax Cracker</a>
       </div>
-    </nav>
+      <ul class="nav navbar-nav">
+        <li class="nav-item nav-link active"><a href="#">Home</a></li>
+        <li class="nav-item nav-link"><a href="login.html">Login</a></li>
+        <li class="nav-item nav-link"><a href="vote.html">Browse</a></li>
+        <li class="nav-item nav-link"><a href="login.html">Logout</a></li>
+        <li class="nav-item nav-link"><a href="help.html">Help</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="main col col-lg-2">
 
-    <div class="login-display">
-      <h1>TaxCrackers</h1>
-      <h3>TaxCrackers is a liquid democracy app giving taxpayers voting rights to establish a fair tax distribution system using blockchain technology.</h3>
-      <p>We want to empower individual Canadian taxpayers to have access to tax distribution projects and improve transparency in the process. We will work with government agencies like Service Canada by providing tools like the TaxCrackers key, so taxpayers will have better control over their tax dollars.</p>
-
-      <form class="login-form" action="index.html" method="post">
-        <div>
-          <label for="civictoken">Civic Token: </label>
-          <input name="civictoken" id="say" value="" placeholder="Token">
-        </div>
-        <div>
-          <label for="accesskey">Access Key: </label>
-          <input name="accesskey" value="" placeholder="Key">
-        </div>
-
-        <!-- <button type="button" id="login-vote" onclick="sendData({test:'ok'})">Click Me!</button> -->
-        <a href='./voting.html' type="button" id="login-vote" >Login</a>
-      </form>
+  <div class="vote-display">
+    <h1>TaxCrackers Voting</h1>
+    <div class="timer-div">
+      <p id="timer">Voting closes: April 10, 2018, 12:00 PM</p>
+    </div>
+    <div class="quorum-div">
+      <p>QUORUM: </p>
+      <p id="quorum"></p>
     </div>
 
-  
+
+    <form class="voter-form" action="index.html" method="post">
+        <p>Select an option to vote on where you want to see your taxes go: </p>
+
+    <div>
+      <label for="issues">Renewables: </label>
+      <input name="issues" id="option-1" type="radio" id="say" value="Renewables">
+    </div>
+    <div>
+      <label for="issues">Pension: </label>
+      <input name="issues" id="option-2" type="radio" value="Pension">
+    </div>
+    <div>
+      <label for="issues">Education: </label>
+      <input name="issues" id="option-3" type="radio" value="Education">
+    </div>
+    <div onclick="voteForOption()" id="submit-vote">
+      <button type="button" class="btn btn-primary" >VOTE</button>
+    </div>
+    </form>
+    </div>
+
+  </div>
+
+
+
+  <div class="results-display">
+    <h1>Results</h1>
+      <div class="results-output-value">
+        <p class="">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Options</th>
+                <th>Votes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Renewables</td>
+                <td id="option-1"></td>
+              </tr>
+              <tr>
+                <td>Pension</td>
+                <td id="option-2"></td>
+              </tr>
+              <tr>
+                <td>Education</td>
+                <td id="option-3"></td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+        <div class="results-output-image">
+
+        </div>
+      </div>
+
+      <div class="results-output">
+        <p class=""></p>
+        <div class="results-output-image">
+
+        </div>
+      </div>
+
+      <div class="results-output">
+        <p class=""></p>
+        <div class="results-output-image">
+
+        </div>
+      </div>
+  </div>
+
+</div>
+
 
   </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
