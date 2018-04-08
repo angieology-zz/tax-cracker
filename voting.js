@@ -8,7 +8,7 @@ contractInstance = VotingContract.at('0xcff6ce3091aee5c0247a80e11d197540a0ee4177
 options = {"Renewables": "option-1", "Pension": "option-2", "Education": "option-3"}
 
 function voteForOption() {
-  optionName = $("#option").val();
+  optionName = $('input[name=issues]:checked').val();
   console.log(optionName);
   contractInstance.voteForOption(optionName, {from: web3.eth.accounts[0]}, function() {
     let div_id = options[optionName];
