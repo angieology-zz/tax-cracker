@@ -38,80 +38,12 @@
           <input name="accesskey" value="" placeholder="Key">
         </div>
 
-        <button type="button" id="login-vote" onclick="sendData({test:'ok'})">Click Me!</button>
-
+        <!-- <button type="button" id="login-vote" onclick="sendData({test:'ok'})">Click Me!</button> -->
+        <a href='./voting.html' type="button" id="login-vote" >Login</a>
       </form>
     </div>
 
-    <form class="voter-form" action="index.html" method="post">
-  <div>
-    <label for="issues">Renewables: </label>
-    <input name="issues" id="option" type="radio" id="say" value="Renewables">
-  </div>
-  <div>
-    <label for="issues">Pension: </label>
-    <input name="issues" id="option" type="radio" value="Pension">
-  </div>
-  <div>
-    <label for="issues">Education: </label>
-    <input name="issues" id="option" type="radio" value="Education">
-  </div>
-
-  <button type="button" id="login-vote" class onclick="voteForOption()">VOTE</button>
-</form>
-</div>
-
-    </div>
-
-
-    <div class="results-display">
-      <h1>Results</h1>
-        <div class="results-output-value">
-          <p class="">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Options</th>
-                  <th>Votes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Renewables</td>
-                  <td id="option-1"></td>
-                </tr>
-                <tr>
-                  <td>Pension</td>
-                  <td id="option-2"></td>
-                </tr>
-                <tr>
-                  <td>Education</td>
-                  <td id="option-3"></td>
-                </tr>
-              </tbody>
-            </table>
-          </p>
-          <div class="results-output-image">
-
-          </div>
-        </div>
-
-        <div class="results-output">
-          <p class=""></p>
-          <div class="results-output-image">
-
-          </div>
-        </div>
-
-        <div class="results-output">
-          <p class=""></p>
-          <div class="results-output-image">
-
-          </div>
-        </div>
-    </div>
-
-
+  
 
   </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
