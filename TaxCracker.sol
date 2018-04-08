@@ -4,9 +4,15 @@ pragma solidity ^0.4.17;
 contract TaxCracker {
     mapping (bytes32 => uint8) public votesReceived;
     bytes32[] public optionsList;
+    address ownerAccount;
+    uint256 tokenOwnerId;
+    bytes32 ownerName;
 
-    function TaxCracker(bytes32[] options) public payable {
+    function TaxCracker(bytes32[] options, uint256 ownerId, bytes32 _ownerName) public {
         optionsList = options;
+        tokenOwnerId = ownerId;
+        ownerName = _ownerName;
+        ownerAccount = msg.sender;
     }
 
     function totalVotesFor(bytes32 option) view public returns (uint8) {
@@ -26,9 +32,23 @@ contract TaxCracker {
             }
         }
         return false;
+    } 
+
+    function getTokenOwner() view public returns(bytes32 name) {
+        return ownerName;
     }
 
-    function transferFunds(address fromAccount, address toAccount) public {
-        toAccount.transfer(fromAccount.balance);
+    function transfer(address _to, uint256 _tokenId, bytes32 _name) public {
+        ownerAccount = _to;
+        tokenOwnerId = _tokenId;
+        ownerName = _name;
+    }
+
+    function verifyOwner() view public returns(bool) {
+        if (ownerAccount == msg.sender) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
