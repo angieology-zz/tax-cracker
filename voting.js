@@ -22,4 +22,28 @@ $(document).ready(function() {
     let val = contractInstance.totalVotesFor.call(option).toString()
     $("#" + options[option]).html(val);
   }
+
+
+  // add in: total Votes, total Voters available
+    var quorum = function(  ) {
+      // pass total percentage of votes cast here
+      votes = 1
+      quorumInput = document.getElementById("quorum").innerHTML = 1 + " TEST %";
+    }
+
+    quorum();
+
+
+
+  let voteDiv = document.querySelector(".vote-display");
+  let submitDiv = document.querySelector(".results-display");
+  let submitVote = document.getElementById("submit-vote");
+
+  function changeScreens() {
+    voteDiv.style.display = "none";
+    submitDiv.style.display = "block";
+  }
+
+  submitVote.addEventListener("click", changeScreens);
+
 });
