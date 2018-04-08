@@ -9,6 +9,7 @@ options = {"Renewables": "option-1", "Pension": "option-2", "Education": "option
 
 function voteForOption() {
   optionName = $("#option").val();
+  console.log(optionName);
   contractInstance.voteForOption(optionName, {from: web3.eth.accounts[0]}, function() {
     let div_id = options[optionName];
     $("#" + div_id).html(contractInstance.totalVotesFor.call(optionName).toString());

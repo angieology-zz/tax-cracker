@@ -43,43 +43,51 @@
       </form>
     </div>
 
-    <div class="vote-display">
-      <h1>TaxCrackers Voting</h1>
-      <div class="timer-div">
-        <p id="timer">Voting closes: April 10, 2018, 12:00 PM</p>
-      </div>
-      <div class="quorum-div">
-        <p>QUORUM: </p>
-        <p>Select an option to vote on where you want to see your taxes go: </p>
-      </div>
+    <form class="voter-form" action="index.html" method="post">
+  <div>
+    <label for="issues">Renewables: </label>
+    <input name="issues" id="option" type="radio" id="say" value="">
+  </div>
+  <div>
+    <label for="issues">Pension: </label>
+    <input name="issues" id="option" type="radio" value="">
+  </div>
+  <div>
+    <label for="issues">Education: </label>
+    <input name="issues" id="option" type="radio" value="">
+  </div>
 
-      <p id="quorum"></p>
+  <button type="button" id="login-vote" class onclick="voteForOption()">VOTE</button>
+</form>
+</div>
 
-      <form class="voter-form" action="index.html" method="post">
-        <div>
-          <label for="issues">Civic Token: </label>
-          <input name="issues" id="option1" type="radio" id="say" value="">
-        </div>
-        <div>
-          <label for="issues">Access Key: </label>
-          <input name="issues" id="option2" type="radio" value="">
-        </div>
-        <div>
-          <label for="issues">Access Key: </label>
-          <input name="issues" id="option3" type="radio" value="">
-        </div>
-
-        <button type="button" id="login-vote" onclick="sendData({test:'ok'})">VOTE</button>
-      </form>
     </div>
 
 
     <div class="results-display">
       <h1>Results</h1>
-        <div class="">
+        <div class="results-output-value">
+          <p class=""></p>
+          <div class="results-output-image">
 
+          </div>
+        </div>
+
+        <div class="results-output">
+          <p class=""></p>
+          <div class="results-output-image">
+
+          </div>
+        </div>
+
+        <div class="results-output">
+          <p class=""></p>
+          <div class="results-output-image">
+
+          </div>
         </div>
     </div>
+
 
 
   </body>
